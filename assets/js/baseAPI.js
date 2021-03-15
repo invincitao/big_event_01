@@ -23,7 +23,7 @@ $.ajaxPrefilter(function (options) {
     };
     // 登录拦截(拦截所有登录，判断身份认证信息)
     options.complete = function (res) {
-        console.log(res);
+        // console.log(res);
         let obj = res.responseJSON;
         // 认证失败就清空token，跳转到登录页
         if (obj.status == 1 && obj.message == '身份认证失败！') {

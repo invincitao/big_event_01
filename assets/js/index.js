@@ -2,7 +2,7 @@
 $(function () {
 
     // 1.获取用户信息
-    getuserInfo();
+    getUserInfo();
     // 2.退出登录,回到登陆页面，清除token
     $('#btnLoginout').on('click', function () {
         layer.confirm('是否确认退出？', { icon: 3, title: '提示' }, function (index) {
@@ -14,8 +14,8 @@ $(function () {
     })
 });
 // 封装需要放到入口函数外边
-// 原因:后面其他的页面要用
-function getuserInfo() {
+// 原因:方便后边调用此方法
+function getUserInfo() {
     $.ajax({
         url: '/my/userinfo',
         type: 'GET',
