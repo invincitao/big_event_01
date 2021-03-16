@@ -15,6 +15,8 @@ $(function () {
                     return layer.msg(res.message, { icon: 5 });
                 }
                 form.val('form_edit', res.data);
+                // 如果当前页面只有一个编辑器： 
+                // 设置内容：tinyMCE.activeEditor.setContent(“需要设置的编辑器内容”)
                 tinyMCE.activeEditor.setContent(res.data.content);
                 if (!res.data.cover_img) {
                     return layer.msg('用户未曾上传头像', { icon: 5 });
